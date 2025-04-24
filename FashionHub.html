@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Clothing Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #6c9bd8;
+      color: #333;
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .products {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .products h2 {
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product-card p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .product-card button {
+      padding: 10px 15px;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #f39c12;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">FashionHub</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Cart 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Trendy Styles Just for You</h1>
+    <p>Discover the latest fashion collections</p>
+  </section>
+
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x250" alt="T-Shirt" />
+        <h3>Classic T-Shirt</h3>
+        <p>$25</p>
+        <button onclick="addToCart('Classic T-Shirt')">Add to Cart</button>
+        <button onclick="addToCart('Classic T-Shirt')">Buy now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x250" alt="Hoodie" />
+        <h3>Cozy Hoodie</h3>
+        <p>$40</p>
+        <button onclick="addToCart('Cozy Hoodie')">Add to Cart</button>
+        <button onclick="addToCart('Classic T-Shirt')">Buy now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x250" alt="Jeans" />
+        <h3>Blue Jeans</h3>
+        <p>$35</p>
+        <button onclick="addToCart('Blue Jeans')">Add to Cart</button>
+        <button onclick="addToCart('Classic T-Shirt')">Buy now</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FashionHub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function addToCart(productName) {
+      alert(productName + " has been added to your cart!");
+    }
+  </script>
+
+</body>
+</html>
