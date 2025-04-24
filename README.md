@@ -5,3 +5,4 @@ docs/pricing_strategy.md - Pricing Strategy
 docs/security_compliance.md - Security & Compliance
 docs/tech_stack_justification.md - Technology Stack Justification
 docs/user_personas.md - User Personas
+docs/value_proposition.md - Value Proposition
