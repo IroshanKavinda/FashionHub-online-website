@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # for Node.js
+    directory: "/"  # Location of package.json
+    schedule:
+      interval: "weekly"  # Check weekly for updates
+  - package-ecosystem: "pip" # for Python
+    directory: "/"  # Location of requirements.txt
+    schedule:
+      interval: "weekly"  # Check weekly for updates
