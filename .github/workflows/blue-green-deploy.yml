@@ -1,0 +1,31 @@
+# .github/workflows/blue-green-deploy.yml
+
+name: Blue-Green Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  blue-green-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy to Green
+      run: ./deploy-green.sh
+
+    - name: Run Health Check
+      run: |
+        STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://green.example.com/health)
+        if [ "$STATUS" -ne 200 ]; then
+          echo "❌ Health check failed!"
+          exit 1
+        fi
+        echo "✅ Green environment is healthy."
+
+    - name: Switch Traffic to Green
+      run: ./switch-to-green.sh
