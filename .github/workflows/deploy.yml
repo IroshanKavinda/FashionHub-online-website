@@ -1,0 +1,31 @@
+# .github/workflows/deploy.yml
+
+name: Deploy to environments
+
+on:
+  push:
+    branches:
+      - dev
+      - staging
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy to environment
+      run: |
+        if [[ "${GITHUB_REF##*/}" == "dev" ]]; then
+          echo "Deploying to DEV"
+          # your deploy dev script
+        elif [[ "${GITHUB_REF##*/}" == "staging" ]]; then
+          echo "Deploying to STAGING"
+          # your deploy staging script
+        elif [[ "${GITHUB_REF##*/}" == "main" ]]; then
+          echo "Deploying to PROD"
+          # your deploy prod script
+        fi
