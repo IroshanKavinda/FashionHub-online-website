@@ -1,0 +1,15 @@
+# .github/workflows/backup.yml
+
+name: Nightly Backup
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run backup script
+      run: ./scripts/db-backup.sh
